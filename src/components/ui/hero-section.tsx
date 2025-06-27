@@ -1,10 +1,108 @@
 import { motion } from "framer-motion";
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Download, ExternalLink, CheckCircle } from "lucide-react";
 import { SplineScene } from "./splite";
+import { useState } from "react";
 
 export function HeroSection() {
+  const [notification, setNotification] = useState<{ message: string; type: 'success' | 'info' | 'error' } | null>(null);
+
+  // Show notification
+  const showNotification = (message: string, type: 'success' | 'info' | 'error' = 'info') => {
+    setNotification({ message, type });
+    setTimeout(() => setNotification(null), 3000);
+  };
+
+  // Handle smooth scroll to projects section
+  const handleViewWork = () => {
+    const projectsSection = document.getElementById('experience');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      showNotification('Scrolling to projects section...', 'info');
+    } else {
+      // If experience section doesn't exist, scroll to a reasonable position
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+      showNotification('Navigating to work section...', 'info');
+    }
+  };
+
+  // Handle resume download
+  const handleDownloadResume = () => {
+    try {
+      // Create a temporary link element for download
+      const link = document.createElement('a');
+      
+      // For now, we'll create a placeholder resume or redirect to an external link
+      // You can replace this with the actual resume file path in the public folder
+      const resumeUrl = 'https://drive.google.com/file/d/1your-actual-resume-file-id/view?usp=sharing'; // Replace with actual resume link
+      
+      // Try to open the resume link
+      window.open(resumeUrl, '_blank');
+      
+      showNotification('Opening resume in new tab...', 'success');
+      
+      // Alternative: If you have a local PDF file in public folder
+      // link.href = '/resume-afreen-alam.pdf';
+      // link.download = 'Afreen_Alam_Resume.pdf';
+      // link.target = '_blank';
+      // document.body.appendChild(link);
+      // link.click();
+      // document.body.removeChild(link);
+      
+    } catch (error) {
+      showNotification('Resume will be available soon!', 'error');
+      console.error('Resume download error:', error);
+    }
+  };
+
+  // Handle contact actions
+  const handlePhoneClick = () => {
+    try {
+      window.open('tel:+919324208312', '_self');
+      showNotification('Opening phone dialer...', 'success');
+    } catch (error) {
+      // Fallback: copy to clipboard
+      navigator.clipboard.writeText('+91 93242 08312');
+      showNotification('Phone number copied to clipboard!', 'success');
+    }
+  };
+
+  const handleEmailClick = () => {
+    try {
+      const subject = encodeURIComponent('Hello Afreen - Portfolio Inquiry');
+      const body = encodeURIComponent('Hi Afreen,\n\nI viewed your portfolio and would like to get in touch with you regarding potential opportunities.\n\nBest regards');
+      window.open(`mailto:alamafreen93@gmail.com?subject=${subject}&body=${body}`, '_self');
+      showNotification('Opening email client...', 'success');
+    } catch (error) {
+      // Fallback: copy to clipboard
+      navigator.clipboard.writeText('alamafreen93@gmail.com');
+      showNotification('Email address copied to clipboard!', 'success');
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Notification Toast */}
+      {notification && (
+        <motion.div
+          initial={{ opacity: 0, y: -50, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -50, scale: 0.9 }}
+          className="fixed top-6 right-6 z-50 flex items-center gap-3 px-6 py-4 bg-slate-900/90 backdrop-blur-xl border border-slate-700/50 rounded-xl shadow-2xl"
+        >
+          <CheckCircle className={`w-5 h-5 ${
+            notification.type === 'success' ? 'text-green-400' : 
+            notification.type === 'error' ? 'text-red-400' : 'text-blue-400'
+          }`} />
+          <span className="text-white font-medium">{notification.message}</span>
+        </motion.div>
+      )}
+
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0">
         {/* Base gradient background */}
@@ -111,17 +209,21 @@ export function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <motion.button
+                onClick={handleViewWork}
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full font-semibold text-white shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 backdrop-blur-sm border border-white/10"
+                className="group px-8 py-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full font-semibold text-white shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 backdrop-blur-sm border border-white/10 cursor-pointer flex items-center justify-center gap-2"
               >
+                <ExternalLink className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 View My Work
               </motion.button>
               <motion.button
+                onClick={handleDownloadResume}
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255, 255, 255, 0.1)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-white/20 rounded-full font-semibold text-slate-300 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm shadow-xl"
+                className="group px-8 py-4 border-2 border-white/20 rounded-full font-semibold text-slate-300 hover:text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm shadow-xl cursor-pointer flex items-center justify-center gap-2"
               >
+                <Download className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
                 Download Resume
               </motion.button>
             </motion.div>
@@ -133,14 +235,24 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-slate-400"
             >
-              <div className="flex items-center gap-2 hover:text-slate-300 transition-colors duration-200">
-                <Phone className="w-4 h-4" />
+              <motion.div 
+                onClick={handlePhoneClick}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 hover:text-slate-300 transition-colors duration-200 cursor-pointer group"
+              >
+                <Phone className="w-4 h-4 group-hover:animate-pulse" />
                 <span>+91 93242 08312</span>
-              </div>
-              <div className="flex items-center gap-2 hover:text-slate-300 transition-colors duration-200">
-                <Mail className="w-4 h-4" />
+              </motion.div>
+              <motion.div 
+                onClick={handleEmailClick}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 hover:text-slate-300 transition-colors duration-200 cursor-pointer group"
+              >
+                <Mail className="w-4 h-4 group-hover:animate-bounce" />
                 <span>alamafreen93@gmail.com</span>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
 
