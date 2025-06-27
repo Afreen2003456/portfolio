@@ -38,6 +38,7 @@ jobs:
       env:
         CI: false
         GENERATE_SOURCEMAP: false
+        PUBLIC_URL: /portfolio
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
@@ -53,10 +54,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-
-    # Only run deploy job on push to main branch
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main' 
+        uses: actions/deploy-pages@v4 

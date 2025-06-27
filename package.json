@@ -1,8 +1,8 @@
 {
-  "name": "haaris-portfolio",
+  "name": "afreen-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://USERNAME.github.io/haaris-portfolio",
+  "homepage": "https://afreen2003456.github.io/portfolio",
   "dependencies": {
     "@splinetool/react-spline": "^4.0.0",
     "@splinetool/runtime": "^1.10.15",
