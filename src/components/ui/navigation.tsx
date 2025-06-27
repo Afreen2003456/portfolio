@@ -17,7 +17,7 @@ export function Navigation() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-white/95 via-gray-50/95 to-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-2xl shadow-gray-900/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-xl border-b border-slate-700/50 shadow-2xl shadow-slate-900/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -34,12 +34,12 @@ export function Navigation() {
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-xl font-heading font-black text-slate-800 tracking-tight">
+              <h1 className="text-xl font-heading font-black text-slate-100 tracking-tight">
                 Afreen Alam
               </h1>
               <div className="flex items-center gap-1">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/60"></div>
-                <span className="text-xs text-emerald-700 font-display font-semibold tracking-wide">Available</span>
+                <span className="text-xs text-emerald-400 font-display font-semibold tracking-wide">Available</span>
               </div>
             </div>
           </motion.div>
@@ -50,7 +50,7 @@ export function Navigation() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="relative text-slate-700 hover:text-slate-900 transition-all duration-300 group px-4 py-2 rounded-lg hover:bg-slate-100/50"
+                className="relative text-slate-300 hover:text-slate-100 transition-all duration-300 group px-4 py-2 rounded-lg hover:bg-slate-800/50"
                 whileHover={{ y: -2, scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
@@ -84,7 +84,7 @@ export function Navigation() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="relative p-2 text-slate-700 hover:text-slate-900 bg-slate-100/50 hover:bg-slate-200/70 rounded-lg border border-slate-300/50 hover:border-slate-400/70 transition-all duration-300 shadow-lg"
+              className="relative p-2 text-slate-300 hover:text-slate-100 bg-slate-800/50 hover:bg-slate-700/70 rounded-lg border border-slate-600/50 hover:border-slate-500/70 transition-all duration-300 shadow-lg"
             >
               <motion.div
                 animate={{ rotate: isMenuOpen ? 180 : 0 }}
@@ -107,13 +107,13 @@ export function Navigation() {
             animate={{ opacity: 1, height: "auto", y: 0 }}
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-xl rounded-2xl mt-4 p-6 border border-gray-200/50 shadow-2xl shadow-gray-900/20"
+            className="md:hidden bg-gradient-to-r from-slate-900/95 to-slate-800/95 backdrop-blur-xl rounded-2xl mt-4 p-6 border border-slate-700/50 shadow-2xl shadow-slate-900/20"
           >
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block py-3 px-4 text-slate-700 hover:text-slate-900 hover:bg-slate-100/50 rounded-xl transition-all duration-300 font-semibold border border-transparent hover:border-slate-300/50"
+                className="block py-3 px-4 text-slate-300 hover:text-slate-100 hover:bg-slate-800/50 rounded-xl transition-all duration-300 font-semibold border border-transparent hover:border-slate-600/50"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}

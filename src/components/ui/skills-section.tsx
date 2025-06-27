@@ -54,7 +54,7 @@ export function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white overflow-hidden">
+    <section id="skills" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0">
         {/* Floating orbs */}
@@ -87,20 +87,20 @@ export function SkillsSection() {
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-white/80 to-gray-100/80 backdrop-blur-xl rounded-full border border-gray-300/50 mb-8 shadow-2xl"
+            className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-xl rounded-full border border-slate-600/50 mb-8 shadow-2xl"
           >
             <Sparkles className="w-5 h-5 text-cyan-400 animate-pulse" />
-            <span className="text-slate-700 font-semibold">Technical Expertise</span>
+            <span className="text-slate-300 font-semibold">Technical Expertise</span>
             <Star className="w-5 h-5 text-yellow-400 animate-pulse delay-300" />
           </motion.div>
           
-          <h2 className="text-5xl sm:text-6xl font-black mb-6 text-slate-800 drop-shadow-2xl">
+          <h2 className="text-5xl sm:text-6xl font-black mb-6 text-slate-100 drop-shadow-2xl">
             Core Competencies
           </h2>
-          <p className="text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed font-medium">
-            Specialized skills in <span className="text-cyan-700 font-semibold">cybersecurity</span>, 
-            <span className="text-emerald-700 font-semibold"> data analytics</span>, and 
-            <span className="text-purple-700 font-semibold"> secure system development</span>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-medium">
+            Specialized skills in <span className="text-cyan-400 font-semibold">cybersecurity</span>, 
+            <span className="text-emerald-400 font-semibold"> data analytics</span>, and 
+            <span className="text-purple-400 font-semibold"> secure system development</span>
           </p>
         </motion.div>
 
@@ -116,14 +116,14 @@ export function SkillsSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className={`group relative bg-gradient-to-br from-white/90 via-gray-50/70 to-white/90 border border-gray-200/50 backdrop-blur-xl hover:border-gray-300/70 transition-all duration-500 rounded-2xl overflow-hidden shadow-2xl ${category.shadowColor} hover:shadow-2xl`}
+                className={`group relative bg-gradient-to-br from-slate-800/90 via-slate-700/70 to-slate-800/90 border border-slate-600/50 backdrop-blur-xl hover:border-slate-500/70 transition-all duration-500 rounded-2xl overflow-hidden shadow-2xl ${category.shadowColor} hover:shadow-2xl`}
               >
                 {/* Background gradient overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                 
                 {/* Floating elements */}
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-white/20 to-white/10 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-gradient-to-r from-white/15 to-white/5 rounded-full animate-bounce delay-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-slate-600/20 to-slate-500/10 rounded-full animate-bounce opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute -bottom-1 -left-1 w-3 h-3 bg-gradient-to-r from-slate-600/15 to-slate-700/5 rounded-full animate-bounce delay-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="p-8 relative z-10">
                   <div className="flex items-center gap-4 mb-6">
@@ -135,7 +135,7 @@ export function SkillsSection() {
                       <IconComponent className="w-8 h-8 text-white drop-shadow-lg" />
                     </motion.div>
                     <div>
-                      <h3 className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors duration-300 drop-shadow-lg">
+                      <h3 className="text-xl font-bold text-slate-100 group-hover:text-slate-50 transition-colors duration-300 drop-shadow-lg">
                         {category.title}
                       </h3>
                       <div className={`w-12 h-1 bg-gradient-to-r ${category.gradient} rounded-full mt-2 group-hover:w-20 transition-all duration-300`}></div>
@@ -151,14 +151,14 @@ export function SkillsSection() {
                         transition={{ duration: 0.5, delay: (index * 0.1) + (skillIndex * 0.05) }}
                         viewport={{ once: true }}
                         whileHover={{ x: 5, scale: 1.02 }}
-                        className="flex items-center gap-3 group/skill p-2 rounded-lg hover:bg-white/5 transition-all duration-300"
+                        className="flex items-center gap-3 group/skill p-2 rounded-lg hover:bg-slate-700/5 transition-all duration-300"
                       >
                         <motion.div 
                           className={`w-2 h-2 bg-gradient-to-r ${category.gradient} rounded-full shadow-lg`}
                           whileHover={{ scale: 2 }}
                           transition={{ duration: 0.2 }}
                         ></motion.div>
-                        <span className="text-slate-700 group-hover/skill:text-slate-900 transition-colors duration-300 font-medium">
+                        <span className="text-slate-300 group-hover/skill:text-slate-100 transition-colors duration-300 font-medium">
                           {skill}
                         </span>
                         <div className={`ml-auto w-0 h-0.5 bg-gradient-to-r ${category.gradient} group-hover/skill:w-4 transition-all duration-300 rounded-full`}></div>
@@ -198,10 +198,8 @@ export function SkillsSection() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center"
-            >
-              <Sparkles className="w-4 h-4 text-white" />
-            </motion.div>
+              className="w-6 h-6 border-2 border-cyan-400 border-t-transparent rounded-full"
+            />
           </div>
         </motion.div>
       </div>

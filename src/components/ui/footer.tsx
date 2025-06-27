@@ -16,7 +16,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white border-t border-gray-200/50 overflow-hidden">
+    <footer className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700/50 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-full blur-3xl"></div>
@@ -46,20 +46,20 @@ export function Footer() {
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
               </div>
               <div>
-                <h3 className="text-2xl font-black text-slate-800">
+                <h3 className="text-2xl font-black text-slate-100">
                   Afreen Alam
                 </h3>
                 <div className="flex items-center gap-2 mt-1">
-                  <Shield className="w-4 h-4 text-cyan-600" />
-                  <span className="text-slate-600 text-sm font-medium">Cybersecurity Specialist</span>
+                  <Shield className="w-4 h-4 text-cyan-400" />
+                  <span className="text-slate-300 text-sm font-medium">Cybersecurity Specialist</span>
                 </div>
               </div>
             </div>
-            <p className="text-slate-700 leading-relaxed max-w-md mb-6">
+            <p className="text-slate-300 leading-relaxed max-w-md mb-6">
               Passionate about securing digital landscapes and protecting data integrity. 
-              Specialized in <span className="text-cyan-700 font-semibold">threat detection</span>, 
-              <span className="text-emerald-700 font-semibold"> compliance</span>, and 
-              <span className="text-purple-700 font-semibold"> data analytics</span>.
+              Specialized in <span className="text-cyan-400 font-semibold">threat detection</span>, 
+              <span className="text-emerald-400 font-semibold"> compliance</span>, and 
+              <span className="text-purple-400 font-semibold"> data analytics</span>.
             </p>
             
             {/* Social Links */}
@@ -72,7 +72,7 @@ export function Footer() {
                     href={social.href}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-10 h-10 bg-gray-100/50 hover:bg-gray-200/50 rounded-xl border border-gray-300/50 hover:border-gray-400/70 flex items-center justify-center transition-all duration-300 text-slate-600 ${social.color} shadow-lg`}
+                    className={`w-10 h-10 bg-slate-800/50 hover:bg-slate-700/50 rounded-xl border border-slate-600/50 hover:border-slate-500/70 flex items-center justify-center transition-all duration-300 text-slate-400 ${social.color} shadow-lg`}
                     aria-label={social.label}
                   >
                     <IconComponent className="w-5 h-5" />
@@ -89,7 +89,7 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+            <h4 className="text-lg font-bold text-slate-100 mb-6 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-cyan-400" />
               Quick Links
             </h4>
@@ -98,7 +98,7 @@ export function Footer() {
                 <motion.li key={index} whileHover={{ x: 5 }}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-slate-400 hover:text-slate-200 transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <div className="w-1 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full group-hover:w-2 transition-all duration-300"></div>
                     {link.name}
@@ -115,7 +115,7 @@ export function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
+            <h4 className="text-lg font-bold text-slate-100 mb-6 flex items-center gap-2">
               <Mail className="w-5 h-5 text-emerald-400" />
               Get In Touch
             </h4>
@@ -123,7 +123,7 @@ export function Footer() {
               <motion.a
                 href="mailto:alamafreen93@gmail.com"
                 whileHover={{ scale: 1.02, x: 5 }}
-                className="flex items-center gap-3 text-slate-400 hover:text-white transition-all duration-300 group"
+                className="flex items-center gap-3 text-slate-400 hover:text-slate-200 transition-all duration-300 group"
               >
                 <div className="w-8 h-8 bg-slate-800/50 rounded-lg flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors duration-300">
                   <Mail className="w-4 h-4" />
@@ -133,7 +133,7 @@ export function Footer() {
               <motion.a
                 href="tel:+919324208312"
                 whileHover={{ scale: 1.02, x: 5 }}
-                className="flex items-center gap-3 text-slate-400 hover:text-white transition-all duration-300 group"
+                className="flex items-center gap-3 text-slate-400 hover:text-slate-200 transition-all duration-300 group"
               >
                 <div className="w-8 h-8 bg-slate-800/50 rounded-lg flex items-center justify-center group-hover:bg-blue-500/20 transition-colors duration-300">
                   <Phone className="w-4 h-4" />
@@ -175,8 +175,8 @@ export function Footer() {
             </div>
             
             <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur-xl rounded-full border border-slate-600/50 shadow-lg">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-xl rounded-full border border-slate-600/50 shadow-lg">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
                 <span className="text-slate-300 text-sm font-medium">Available for opportunities</span>
               </div>
             </div>

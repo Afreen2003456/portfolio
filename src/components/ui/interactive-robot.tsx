@@ -235,13 +235,13 @@ export function InteractiveRobot({ className }: InteractiveRobotProps) {
 
       {/* Message Bubble */}
       <motion.div
-        className="absolute -top-16 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-slate-800/95 to-slate-700/95 backdrop-blur-xl border border-cyan-400/30 rounded-xl shadow-lg shadow-cyan-400/20"
+        className="absolute -top-16 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-white/95 to-gray-100/95 backdrop-blur-xl border border-gray-300/50 rounded-xl shadow-lg shadow-gray-500/40"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
         <motion.p
-          className="text-sm font-display font-semibold text-cyan-100 whitespace-nowrap"
+          className="text-sm font-display font-bold text-slate-900 whitespace-nowrap"
           key={currentMessage}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -249,14 +249,14 @@ export function InteractiveRobot({ className }: InteractiveRobotProps) {
         >
           {messages[currentMessage]}
         </motion.p>
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-slate-700/95"></div>
+        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-100/95"></div>
       </motion.div>
 
       {/* Click Instruction */}
       {!isActive && (
         <motion.div
-          className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-slate-400 text-center"
-          animate={{ opacity: [0.5, 1, 0.5] }}
+          className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-slate-900 font-bold text-center bg-white/90 px-3 py-1 rounded-full border border-gray-300/50 shadow-md"
+          animate={{ opacity: [0.7, 1, 0.7] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           Click to activate
