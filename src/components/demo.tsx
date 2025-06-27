@@ -1,5 +1,5 @@
 import { HeroGeometric } from "./ui/shape-landing-hero"
-
+import { CybersecuritySparklesHero, SparklesShowcase, SparklesExperience } from "./ui/sparkles-demo"
 
 function DemoHeroGeometric() {
     return <HeroGeometric 
@@ -9,4 +9,21 @@ function DemoHeroGeometric() {
     />
 }
 
-export { DemoHeroGeometric } 
+function DemoCybersecurityHero() {
+    return <CybersecuritySparklesHero />
+}
+
+function DemoSparklesShowcase() {
+    return <SparklesShowcase />
+}
+
+function DemoSparklesExperience() {
+    return <SparklesExperience />
+}
+
+export { 
+    DemoHeroGeometric, 
+    DemoCybersecurityHero, 
+    DemoSparklesShowcase, 
+    DemoSparklesExperience 
+} 

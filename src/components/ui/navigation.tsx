@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Menu, X, Sparkles } from "lucide-react";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,75 +17,133 @@ export function Navigation() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50"
+      className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-white/95 via-gray-50/95 to-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-2xl shadow-gray-900/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Enhanced Logo */}
           <motion.div 
-            className="flex items-center space-x-3"
+            className="flex items-center space-x-4"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-lg">AA</span>
+            <div className="relative">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-xl shadow-blue-500/30 border border-white/20">
+                <span className="text-white font-black text-lg">AA</span>
+              </div>
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></div>
             </div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Afreen Alam
-            </h1>
+            <div className="flex flex-col">
+              <h1 className="text-xl font-heading font-black text-slate-800 tracking-tight">
+                Afreen Alam
+              </h1>
+              <div className="flex items-center gap-1">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-lg shadow-emerald-500/60"></div>
+                <span className="text-xs text-emerald-700 font-display font-semibold tracking-wide">Available</span>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/* Enhanced Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="text-slate-300 hover:text-white transition-colors duration-300 relative group"
-                whileHover={{ y: -2 }}
+                className="relative text-slate-700 hover:text-slate-900 transition-all duration-300 group px-4 py-2 rounded-lg hover:bg-slate-100/50"
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+                <span className="relative z-10 font-display font-bold tracking-wide">{item.name}</span>
+                <span className="absolute bottom-0 left-4 w-0 h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 group-hover:w-[calc(100%-2rem)] transition-all duration-300 rounded-full"></span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </motion.a>
             ))}
+            
+            {/* Hire Me Button */}
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              className="relative px-6 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full font-bold text-white shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 transition-all duration-300 border border-white/20 overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <span className="relative z-10 flex items-center gap-2 font-display font-bold tracking-wide">
+                <Sparkles className="w-4 h-4 animate-sparkle" />
+                Hire Me
+              </span>
+            </motion.a>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Enhanced Mobile menu button */}
           <div className="md:hidden">
-            <button
+            <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-slate-300 hover:text-white"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative p-2 text-slate-700 hover:text-slate-900 bg-slate-100/50 hover:bg-slate-200/70 rounded-lg border border-slate-300/50 hover:border-slate-400/70 transition-all duration-300 shadow-lg"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
+              <motion.div
+                animate={{ rotate: isMenuOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {isMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </motion.div>
+            </motion.button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Enhanced Mobile Navigation */}
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-900/95 backdrop-blur-md rounded-lg mt-2 p-4"
+            initial={{ opacity: 0, height: 0, y: -20 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-gradient-to-r from-white/95 to-gray-50/95 backdrop-blur-xl rounded-2xl mt-4 p-6 border border-gray-200/50 shadow-2xl shadow-gray-900/20"
           >
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-slate-300 hover:text-white transition-colors duration-300"
+                className="block py-3 px-4 text-slate-700 hover:text-slate-900 hover:bg-slate-100/50 rounded-xl transition-all duration-300 font-semibold border border-transparent hover:border-slate-300/50"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => setIsMenuOpen(false)}
+                whileHover={{ x: 5, scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {item.name}
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+                  {item.name}
+                </div>
               </motion.a>
             ))}
+            
+            {/* Mobile Hire Me Button */}
+            <motion.a
+              href="#contact"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: navItems.length * 0.1 }}
+              onClick={() => setIsMenuOpen(false)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="block mt-4 py-3 px-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-xl font-bold text-white text-center shadow-xl shadow-blue-500/25 border border-white/20"
+            >
+              <div className="flex items-center justify-center gap-2">
+                <Sparkles className="w-4 h-4 animate-pulse" />
+                Hire Me
+              </div>
+            </motion.a>
           </motion.div>
         )}
       </div>
