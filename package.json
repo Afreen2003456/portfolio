@@ -1,16 +1,17 @@
 {
-  "name": "new-folder-(2)",
+  "name": "haaris-portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal portfolio website built with Next.js",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["portfolio", "nextjs", "react", "typescript"],
+  "author": "Haaris",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
