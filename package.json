@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/fix-paths.js",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && node scripts/fix-paths.js"
+    "export": "next build"
   },
   "keywords": ["portfolio", "nextjs", "react", "typescript"],
   "author": "Haaris",
