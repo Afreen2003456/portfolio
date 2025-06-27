@@ -8,28 +8,28 @@ export function ExperienceSection() {
       title: "Cybersecurity Analytics: Threat Detection & Incident Response",
       description: "Designed dashboards in Power BI to monitor real-time threats using log files from IDS/IPS systems. Applied ML models (Isolation Forest, DBSCAN) to detect anomalies in access logs.",
       technologies: ["Power BI", "Python", "Anomaly Detection", "GDPR", "HIPAA"],
-      gradient: "from-blue-700 to-blue-800"
+      gradient: "from-red-500 to-orange-500"
     },
     {
       icon: Activity,
       title: "Security Analytics Dashboard for Network Monitoring",
       description: "Built a network traffic analysis tool using Apache Spark and KNIME. Clustered event logs using ML techniques to identify suspicious behavior.",
       technologies: ["KNIME", "Apache Spark", "Power BI", "Log Analytics"],
-      gradient: "from-blue-700 to-blue-800"
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       icon: FileCheck,
       title: "Document Verification System Using Blockchain",
       description: "Implemented a blockchain-based system for secure academic document verification. Used smart contracts to automate validation workflows.",
       technologies: ["Ethereum", "Solidity", "Python", "Cryptography"],
-      gradient: "from-blue-700 to-blue-800"
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       icon: Search,
       title: "Fraud Detection System with Data Protection",
       description: "Integrated fraud detection ML model with encrypted data processing and access control. Ensured compliance with financial and privacy regulations.",
       technologies: ["Python", "Tableau", "Risk Analytics", "Secure API"],
-      gradient: "from-blue-700 to-blue-800"
+      gradient: "from-green-500 to-emerald-500"
     }
   ];
 
@@ -69,7 +69,7 @@ export function ExperienceSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-gradient-to-br from-white/95 to-gray-100/90 border-gray-300/50 backdrop-blur-sm hover:scale-[1.02] transition-all duration-300 rounded-2xl border overflow-hidden shadow-lg shadow-gray-500/20"
+                className="group bg-gradient-to-br from-slate-900/80 to-slate-800/50 border-slate-700/50 backdrop-blur-sm hover:scale-[1.02] transition-all duration-300 rounded-2xl border overflow-hidden"
               >
                 <div className="p-8 relative">
                   <div className={`absolute inset-0 bg-gradient-to-r ${project.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
@@ -79,8 +79,8 @@ export function ExperienceSection() {
                         <IconComponent className="w-8 h-8 text-white" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-slate-800 mb-3 group-hover:text-slate-900 transition-colors duration-300">{project.title}</h3>
-                        <p className="text-slate-700 leading-relaxed font-medium">{project.description}</p>
+                        <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-slate-100 transition-colors duration-300">{project.title}</h3>
+                        <p className="text-slate-300 leading-relaxed">{project.description}</p>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-2">
