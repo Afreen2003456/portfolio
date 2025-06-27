@@ -1,190 +1,46 @@
-# Alam Afreen - Interactive 3D Portfolio
+# Getting Started with Create React App
 
-A modern, interactive portfolio website built with Next.js, featuring 3D Spline scenes, beautiful animations, and responsive design.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🚀 Features
+## Available Scripts
 
-- **Next.js 14** with App Router
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **shadcn/ui** component library
-- **3D Interactive Scenes** with Spline
-- **Framer Motion** animations  
-- **Responsive Design**
-- **Spotlight Effects**
-- **Modern UI/UX**
+In the project directory, you can run:
 
-## 🛠️ Tech Stack
+### `npm start`
 
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Spline (@splinetool/react-spline)
-- Framer Motion
-- Lucide React (for icons)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 📦 Installation
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd portfolio-app
-   ```
+### `npm test`
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-3. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+### `npm run build`
 
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 🏗️ Project Structure
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```
-├── app/                    # Next.js App Router
-│   ├── globals.css        # Global styles with Tailwind
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Main page
-├── components/            # React components
-│   ├── ui/               # shadcn/ui components
-│   │   ├── card.tsx      # Card component
-│   │   ├── spotlight.tsx # Spotlight effect
-│   │   ├── splite.tsx    # Spline scene wrapper
-│   │   └── interactive-spotlight.tsx # Interactive spotlight
-│   └── demo.tsx          # Demo component with 3D scene
-├── lib/                  # Utility functions
-│   └── utils.ts         # cn() utility for classes
-├── tailwind.config.js   # Tailwind configuration
-├── tsconfig.json        # TypeScript configuration
-└── next.config.js       # Next.js configuration
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## 🎨 Components Overview
+### `npm run eject`
 
-### SplineScene (`components/ui/splite.tsx`)
-- Lazy-loaded 3D scene component
-- Suspense wrapper with loading fallback
-- Integrates with Spline 3D scenes
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### SplineSceneBasic (`components/demo.tsx`)
-- Main demo component combining:
-  - Interactive 3D scene
-  - Spotlight effects
-  - Responsive layout
-  - Modern typography
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Card Components
-- Reusable card components following shadcn/ui patterns
-- Fully typed with TypeScript
-- Customizable with Tailwind classes
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-### Spotlight Effects
-- **Aceternity Spotlight**: Static SVG-based spotlight
-- **Interactive Spotlight**: Mouse-tracking spotlight with Framer Motion
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## 🔧 Configuration
+## Learn More
 
-### Tailwind CSS
-- Configured with shadcn/ui design tokens
-- Custom animations for spotlight effects
-- Responsive breakpoints
-- Dark mode support
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### TypeScript
-- Strict mode enabled
-- Path aliases configured (`@/*`)
-- Next.js plugin integration
-
-### Spline Integration
-- 3D scenes loaded from Spline cloud
-- Optimized with lazy loading
-- Responsive scene handling
-
-## 🎯 Usage
-
-### Adding New 3D Scenes
-```tsx
-<SplineScene 
-  scene="https://prod.spline.design/YOUR_SCENE_ID/scene.splinecode"
-  className="w-full h-full"
-/>
-```
-
-### Using Spotlight Effects
-```tsx
-// Static spotlight
-<Spotlight className="-top-40 left-0" fill="white" />
-
-// Interactive spotlight
-<InteractiveSpotlight size={300} />
-```
-
-### Adding New Components
-1. Create component in `components/ui/`
-2. Follow shadcn/ui patterns
-3. Use `cn()` utility for className merging
-4. Add proper TypeScript types
-
-## 📱 Responsive Design
-
-- Mobile-first approach
-- Breakpoints: `sm`, `md`, `lg`, `xl`, `2xl`
-- Responsive typography scales
-- Touch-friendly interactions
-
-## 🎨 Customization
-
-### Colors & Themes
-Modify `tailwind.config.js` and `app/globals.css` for custom themes.
-
-### 3D Scenes
-Create your own scenes in [Spline](https://spline.design/) and replace the scene URLs.
-
-### Animations
-Customize animations in `tailwind.config.js` keyframes section.
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-```bash
-npm run build
-vercel --prod
-```
-
-### Other Platforms
-```bash
-npm run build
-npm start
-```
-
-## 📄 Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## 📧 Contact
-
-**Alam Afreen**
-- Email: [Contact Email]
-- LinkedIn: [LinkedIn Profile]
-- GitHub: [GitHub Profile]
-
----
-
-*Built with ❤️ by Alam Afreen* 
+To learn React, check out the [React documentation](https://reactjs.org/).
